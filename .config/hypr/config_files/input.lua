@@ -1,0 +1,15 @@
+hl.config({
+    input = {
+        kb_layout = "us,br",
+        kb_options = "grp:win_space_toggle",
+        kb_variant = "",
+        kb_model = "",
+        kb_rules = "",
+
+        follow_mouse = 1,
+
+        sensitivity = -0.2, -- -1.0 - 1.0, 0 means no modification
+        accel_profile = "flat",
+        force_no_accel = false,
+    },
+})
