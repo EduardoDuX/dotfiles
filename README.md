@@ -31,7 +31,7 @@ Se você está configurando este ambiente do zero em uma nova máquina, siga os 
 
 ### 1. Clonar o repositório como Bare Repository
 ```bash
-git clone --bare https://github.com/SEU-USUARIO/dotfiles.git $HOME/.cfg
+git clone --bare https://github.com/EduardoDux/dotfiles.git $HOME/.cfg
 ```
 
 ### 2. Definir o alias temporariamente no terminal atual
