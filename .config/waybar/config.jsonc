@@ -40,16 +40,17 @@
     "clock": {
         "format": "{:%H:%M}  ",
         "format-alt": "{:%A, %B %d, %Y (%R)}  ",
+        "tooltip": true,
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
                     "mode"          : "year",
                     "mode-mon-col"  : 3,
                     "on-scroll"     : 1,
                     "format": {
-                            "months":   "<span color='#DB301C'><b>{}</b></span>",
-                            "days":     "<span color='#ffffff'><b>{}</b></span>",
-                            "weekdays":   "<span color='#fa9e1d'><b>{}</b></span>",
-                            "today":    "<span color='#3DAEE9'><b><u>{}</u></b></span>"
+                            "months":   "<span color='@red'><b>{}</b></span>",
+                            "days":     "<span color='@text'><b>{}</b></span>",
+                            "weekdays":   "<span color='@peach'><b>{}</b></span>",
+                            "today":    "<span color='@blue'><b><u>{}</u></b></span>"
                             }
                     },
         "actions":  {
