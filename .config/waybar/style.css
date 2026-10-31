@@ -1,0 +1,54 @@
+/* Overall bar styling */
+#waybar {
+    background-color: rgba(60, 60, 80, 0.568); /* Semi-transparent black */
+    color: white;
+    font-family: Sans; /* Choose your font */
+    font-size: 20px;
+}
+
+/* Module styling */
+#waybar .module {
+    padding: 0 10px;
+}
+
+#waybar #clock {
+    color: rgb(255, 255, 255);
+}
+
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+#pulseaudio-slider trough {
+    min-height: 10px;
+    min-width: 100px;
+    background-color: black;
+}
+#pulseaudio-slider highlight {
+    min-width: 1px;
+    background-color: rgb(116, 199, 236);
+}
+
+/* Estilo geral de todos os botões de workspace */
+#workspaces button {
+    background-color: rgba(0, 0, 0, 0.2); /* Um fundo leve para destacar da barra */
+    color: #ffffff;                        /* Cor do número do workspace */
+    border-radius: 5px;
+    padding: 0 5px;
+    margin: 0 3px;
+}
+
+/* Workspace ativo (já estava aí, mas bom garantir) */
+#workspaces button.active {
+    color: rgb(116, 199, 236);
+    background-color: rgba(116, 199, 236, 0.2);
+}
+
+/* Workspaces vazios ou persistentes que não estão em foco */
+#workspaces button.empty {
+    color: rgba(116, 199, 236, 0.5); /* Fica um pouco mais apagado, mas visível */
+}

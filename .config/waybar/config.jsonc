@@ -1,0 +1,63 @@
+{
+    "height": 42,
+    "spacing": 5,
+    "layer": "top",
+    "position": "top",
+    "modules-left": ["hyprland/window"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["privacy", "hyprland/language", "bluetooth", "network", "pulseaudio/slider", "pulseaudio", "clock"],
+
+    "bluetooth": {
+        "format": " {device_alias}"
+    },
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "US",
+        "format-pt": "BR"
+    },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-ethernet": "Connected via Wire",
+        "format-wifi": "Connected via Wifi",
+        "format-disconnected": "Disconnected",
+        "tooltip-format-disconnected": "Offline",
+        "tooltip-format-ethernet": "{ifname}",
+        "max-length": 50
+    },
+    "clock": {
+        "format": "{:%H:%M}  ",
+        "format-alt": "{:%A, %B %d, %Y (%R)}  ",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "on-scroll"     : 1,
+                    "format": {
+                            "months":   "<span color='#DB301C'><b>{}</b></span>",
+                            "days":     "<span color='#ffffff'><b>{}</b></span>",
+                            "weekdays":   "<span color='#fa9e1d'><b>{}</b></span>",
+                            "today":    "<span color='#3DAEE9'><b><u>{}</u></b></span>"
+                            }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-scroll-up": "tz_up",
+                    "on-scroll-down": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
+    }
+}
