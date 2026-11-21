@@ -7,29 +7,47 @@ return {
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
+		dependencies = { "williamboman/mason.nvim" },
 		opts = { auto_install = true },
 	},
 	{
 		"neovim/nvim-lspconfig",
+		dependencies = { "hrsh7th/cmp-nvim-lsp" },
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			-- Lista de servidores que você quer ativar
 			local servers = { "lua_ls", "bashls", "clangd", "rust_analyzer", "pyright" }
 
 			for _, server in ipairs(servers) do
-				-- Configura as capabilities padrão (e outras opções se precisar) para cada servidor
 				vim.lsp.config(server, {
 					capabilities = capabilities,
 				})
-				-- Habilita o servidor nativamente
 				vim.lsp.enable(server)
 			end
 
-			-- Atalhos globais ou via LspAttach (mantidos conforme o seu fluxo)
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
-			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP Hover" })
+			vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP Go to Definition" })
+			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP Code Action" })
+
+			vim.diagnostic.config({
+				-- Mostra a mensagem do warning/erro na própria linha do código
+				virtual_text = {
+					prefix = "●",
+					spacing = 4,
+				},
+				-- Mantém o W / E / I / H na coluna lateral (sign column)
+				signs = {
+					text = {
+						[vim.diagnostic.severity.ERROR] = "E",
+						[vim.diagnostic.severity.WARN] = "W",
+						[vim.diagnostic.severity.INFO] = "I",
+						[vim.diagnostic.severity.HINT] = "H",
+					},
+				},
+				underline = true,
+				update_in_insert = false,
+				severity_sort = true,
+			})
 		end,
 	},
 }
